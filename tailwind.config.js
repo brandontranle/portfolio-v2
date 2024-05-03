@@ -12,8 +12,11 @@ export default {
     fontFamily: {
       bigCalson: ["big-caslon-fb", "serif"],
       barcode: ["c39hrp36dlttnormal"],
-      barcode2: ["c39hrp24dhtt"],
+      //barcode2: ["c39hrp24dhtt"],
   }, 
+    boxShadow:{
+      custom: "20px 20px 20px rgba(0, 0, 0, 0.1), -20px -20px 20px rgba(0, 0, 0, 0.1)",
+    }
   }, 
   plugins: [], 
   }

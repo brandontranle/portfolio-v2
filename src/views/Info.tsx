@@ -7,7 +7,7 @@ export const Info = () => {
         return () => setFadeIn(false); // Clean up the state when the component unmounts
     }, []);
     return (
-        <div className={`hidden text-right w-[200px] ${fadeIn ? 'fade-in' : ''}`}>         
+        <div className={`hidden text-right w-[200px]  ml-auto  ${fadeIn ? 'fade-in' : ''}`}>         
             <h1 className="font-barcode text-6xl mb-5 mt-auto">Info</h1>
             <p>This is a simple example of a React app built with Vite.</p>
         </div>
