@@ -554,6 +554,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.static {
+  position: static;
+}
+
 .relative {
   position: relative;
 }
@@ -620,6 +624,18 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[350px\] {
+  width: 350px;
+}
+
+.w-\[400px\] {
+  width: 400px;
 }
 
 .min-w-\[450px\] {
@@ -742,7 +758,7 @@ box-sizing: border-box;*/
 
 .content-area{
   box-sizing: border-box;
-  border: 5px solid #807A76;
+  border: 4.5px solid #807A76;
 }
 
 .content-area::before {
@@ -757,7 +773,7 @@ box-sizing: border-box;*/
   bottom: -20px;
   /* Less negative than left and right for shorter height */
   z-index: -1;
-  border: 5px solid #807A76;
+  border: 4.5px solid #807A76;
 }
 
 @font-face{

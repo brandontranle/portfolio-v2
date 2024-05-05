@@ -1,9 +1,9 @@
-import {lazy, Suspense} from 'react';
 
-const Home = lazy(() => import('./views/Home').then(module => ({ default: module.Home })));
-const About = lazy(() => import('./views/About').then(module => ({ default: module.About })));
-const Projects = lazy(() => import('./views/Projects').then(module => ({ default: module.Projects })));
-const Info = lazy(() => import('./views/Info').then(module => ({ default: module.Info })));
+import {Home} from "./views/Home";
+import {About} from "./views/About";
+import {Projects} from "./views/Projects";
+import {Info} from "./views/Info";
+
 import {
   Routes,
   Route,
@@ -36,14 +36,12 @@ function App() {
             <Link className={`redirect-item text-md md:text-lg ${location.pathname === '/info' ? 'selected' : ''}`} to="/info">Info</Link>
           </nav>
           <div id="page-content" className="h-full flex mb-10 md:mb-0 ">
-          <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/info" element={<Info />} />
           </Routes>
-          </Suspense>
         </div>
         <span className="text-sm mt-auto xl:hidden block">
          © 2023 Brandon Le | All Rights Reserved
