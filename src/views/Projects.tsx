@@ -13,8 +13,6 @@ skills: Skill[];
 }
 
 const ProjectCard: React.FC<Project> = ({title, type, description, link, skills}) => {
-
-
     return (
         <div className="project-card p-5 pr-0 min-w-[450px]">
             <h1 className="text-6xl mt-auto">{title}</h1>
@@ -49,7 +47,7 @@ export const Projects = () => {
 
     const projects: Project[] = [
         {
-            title: "Vitametrics.",
+            title: "Vitametrics",
             type: "Open-source Web Application & Docker Program",
             description: "Target for researchers--Vitametrics captures data from Fitbit trackers for researchers to export and analyze.",
             link: "https://vitametrics.org/",
@@ -62,7 +60,7 @@ export const Projects = () => {
                 {icon: "typescript"},
             ]
         },{
-            title: "Miso.",
+            title: "Miso",
             type: "Web Application",
             description: "Invite your friends to study in your room--sanctioned for boosting your productivity and creativity.",
             link: "https://github.com/brandontranle/miso",
@@ -78,12 +76,12 @@ export const Projects = () => {
         {
             title: "MSUB",
             type: "Static Web Application",
-            description: "Designed to showcase Math-Science Upward Bound.",
+            description: "Designed to showcase Math-Science Upward Bound to hundreds of High School Students every year.",
             link: "https://github.com/brandontranle/msub",
             skills: [
-                {icon: "html5"},
-                {icon: "css3"},
-                {icon: "javascript"},
+                {icon: "react"},
+                {icon: "sass"},
+                {icon: "typescript"},
             ]
         }
         ]
@@ -95,7 +93,7 @@ export const Projects = () => {
     return (
         <div className={`text-right w-full h-full ml-auto ${fadeIn ? 'fade-in' : 'hidden'}`}>         
             <h1 className="font-barcode text-6xl mb-auto ml-auto">Projects</h1>
-            <div className="flex overflow-x-auto projects-container"  >
+            <div className="projects-container flex max-w-[917px]">
             {projects.map((project, index) => (
                 <ProjectCard key={index} {...project} />
             ))}

@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default { 
+  darkMode: "class",
+
   content: [ "./index.html", "./src/**/*.{js,ts,jsx,tsx}", ], 
   theme: { extend: {
     backgroundColor: {
-      primary: "#302B27",
-      secondary: "#302A27",
+      primary: "#FBF4EE",
+      secondary: "#F4EDE7",
+      darkPrimary: '#302B27', // Dark background primary color
+      darkSecondary: '#302A27', // Dark background secondary color
     },
     textColor: {
       primary: "#807A76",
