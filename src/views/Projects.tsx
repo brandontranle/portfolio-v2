@@ -14,15 +14,15 @@ skills: Skill[];
 
 const ProjectCard: React.FC<Project> = ({title, type, description, link, skills}) => {
     return (
-        <div className="project-card p-5 pr-0 min-w-[450px]">
-            <h1 className="text-6xl mt-auto">{title}</h1>
+        <div className="project-card p-5 pr-0 min-w-[400px] lg:min-w-[450px]">
+            <h1 className="text-4xl lg:text-6xl mt-auto">{title}</h1>
             <h2 className="text-sm">{type}</h2>
-            <p className="text-lg">{description}</p>
+            <p className="text-md lg:text-lg">{description}</p>
             <div className="flex flex-row ml-auto items-center gap-2" >
             {skills.map((skill, index) => (
           <span className="flex items-center gap-2 text-lg" key={index}>
             <i
-              className={`text-4xl devicon-${
+              className={`text-3xl lg:text-4xl devicon-${
                 skill.icon === "express" ||
                 skill.icon === "emacs" ||
                 skill.icon === "influxdb"
@@ -34,7 +34,7 @@ const ProjectCard: React.FC<Project> = ({title, type, description, link, skills}
         ))}
             </div>
 
-            <button onClick={() => window.open(link)} className="view-button text-lg p-2 w-[125px] ml-auto">View</button>
+            <button onClick={() => window.open(link)} className="view-button text-md lg:text-lg p-2 w-[125px] ml-auto">View</button>
 
         </div>
         
@@ -92,7 +92,7 @@ export const Projects = () => {
     }, []);
     return (
         <div className={`text-right w-full h-full ml-auto ${fadeIn ? 'fade-in' : 'hidden'}`}>         
-            <h1 className="font-barcode text-6xl mt-auto ml-auto">Projects</h1>
+            <h1 className="font-barcode text-5xl lg:text-6xl mt-auto ml-auto">Projects</h1>
             <div className="projects-container flex max-w-[917px]">
             {projects.map((project, index) => (
                 <ProjectCard key={index} {...project} />

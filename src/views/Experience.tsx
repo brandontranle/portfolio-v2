@@ -82,7 +82,7 @@ export const Experience = () => {
     }, []);
     return (
         <div className={`text-right w-full ml-auto ${fadeIn ? 'fade-in' : 'hidden'} xl:max-h-[365px] flex justify-end`}>     
-            <h1 className="font-barcode text-6xl mb-5 mt-auto ml-auto"> Experience</h1>
+            <h1 className="font-barcode text-5xl lg:text-6xl mb-5 mt-auto ml-auto">Experience</h1>
             <div className="overflow-y-auto experience-container overflow-x-hidden"  >
                 <ExperienceCard title="Vitametrics" role="Founder, Software Developer - Jan. 2024 to Present" description={["Associated with 2 academic institutions for product beta testing", "Spearheading the frontend in Typescript where universities can connect Fitbit technology using Fitbit’s Intraday API", "Completed thorough QA testing with Google Lightouse scoring at least a 99 on performance among most pages."]} skills={[{icon: "react"}, {icon: "nodejs"}, {icon: "mongodb"}, {icon: "docker"}, {icon: "express"}, {icon: "typescript"}]}/>
                 <ExperienceCard title="Intern Guys" role="Software Engineer Intern" description={["Optimized C# job search algorithm to 50% faster search time and 75% in job matching accuracy.", "Directed full-stack solutions for a blog and writing interface for the CEO to streamline advice and promote start-ups to users."]} skills={[{icon: "react"}, {icon: "csharp"}, {icon: "mysql"}, {icon: "javascript"}]}/>

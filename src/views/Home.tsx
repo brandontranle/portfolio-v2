@@ -9,7 +9,7 @@ export const Home = () => {
     }, []);
     return (
         <div className={`text-right w-[400px] ml-auto ${fadeIn ? 'fade-in' : ''}`}>            
-        <h1 className="font-barcode text-6xl mb-5 mt-auto ml-auto"> Home</h1>
+        <h1 className="font-barcode text-5xl lg:text-6xl mb-5 mt-auto ml-auto"> Home</h1>
             <p> <span className="dot"></span> <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5]"> Status: </span> <a href="https://vitametrics.org"> Operating Vitametrics for beta testing  </a> </p>
             <br/>
             <p>Runner by day, Software Developer by night, Swiftie 24/7.</p>
