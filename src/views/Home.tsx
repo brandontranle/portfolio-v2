@@ -19,7 +19,7 @@ export const Home = () => {
             <br/>
             <a href="https://www.linkedin.com/in/brandon-tran-le/" className="url-link">LinkedIn</a>
                 <a href="https://github.com/brandontranle" className="url-link">GitHub</a>
-                <a href="https://resume.brandonle.dev" className="url-link">Resume</a>
+                <a href="https://brandon-le-resume.tiiny.site/" className="url-link">Resume</a>
                 <a href="mailto:brandonle831@gmail.com"  className="url-link">Email </a>
 
         </div>
