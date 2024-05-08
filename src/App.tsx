@@ -50,7 +50,7 @@ function App() {
   </svg>
       <div id="inner-content" className={`flex flex-col ${theme === "dark" ? "bg-noise" : "light-bg-noise"} h-full w-full px-0 py-0 md:p-5 xl:pt-8  xl:px-32 2xl:pt-10 2xl:px-40 inner-content md:shadow-custom`}>
       <div className="flex-row flex h-full"> 
-      <div id="options" className="hidden md:flex h-full flex-col rotate-[-180deg]">
+      <div id="options" className="hidden xl:flex h-full flex-col rotate-[-180deg]">
         <div onClick={() => toggleTheme("light")} className="flex flip-vertical hover:cursor-pointer gap-1 items-center"> Light <div className={`circle ${theme === "light" ? "selected-circle" : ""}`}/> </div>
         <br/>
         <div onClick={() => toggleTheme("dark")} className="flip-vertical hover:cursor-pointer flex gap-1 items-center"> Dark <div className={`circle ${theme === "dark" ? "selected-circle" : ""}`}/>  </div>
@@ -74,9 +74,17 @@ function App() {
               
           </Routes>
         </div>
-        <span className="text-sm mt-auto xl:hidden block">
-         © 2023 Brandon Le | All Rights Reserved
-        </span>
+        <span className="text-sm mt-auto xl:hidden flex flex-row">
+        <span className="mr-auto"> 
+         © 2023 Brandon Le | All Rights Reserved 
+         </span>
+        <div className="flex flex-row gap-2 ml-auto">
+        <div onClick={() => toggleTheme("light")} className="flex hover:cursor-pointer gap-1 items-center text-sm"> Light <div className={`circle ${theme === "light" ? "selected-circle" : ""}`}/> </div>
+        <br/>
+        <div onClick={() => toggleTheme("dark")} className="hover:cursor-pointer flex gap-1 items-center text-sm"> Dark <div className={`circle ${theme === "dark" ? "selected-circle" : ""}`}/>  </div>
+        </div>
+      </span>
+
         </div>
 
         </div>
