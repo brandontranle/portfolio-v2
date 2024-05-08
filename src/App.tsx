@@ -65,7 +65,7 @@ function App() {
             <Link className={`redirect-item text-md md:text-lg ${location.pathname === '/projects' ? 'selected' : ''}`} to="/projects">Projects</Link>
             <Link className={`redirect-item text-md md:text-lg ${location.pathname === '/experience' ? 'selected' : ''}`} to="/experience">Experience</Link>
           </nav>
-          <div id="page-content" className="h-full flex mb-10 md:mb-0 overflow-y-hidden">
+          <div id="page-content" className="h-full flex mb-5 md:mb-0 overflow-y-hidden">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
