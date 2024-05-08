@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     outDir: 'dist/client',
     rollupOptions: {
-      input: './src/main.jsx'
+      input: '/src/main.tsx'
     }
   },
   ssr: {
