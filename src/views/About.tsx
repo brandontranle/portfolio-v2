@@ -16,13 +16,12 @@ export const About = () => {
     }, []);
     return (
         <div className={`hidden text-right w-[450px] mt-auto lg:mt-0 ml-auto ${fadeIn ? 'fade-in' : ''}`}>         
-            <h1 className="font-barcode text-5xl lg:text-6xl mb-4">About</h1>
-            <p>I am a Computer Science student at <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5] hover:cursor-pointer" onClick={() => window.open("https://www.ucla.edu/")}> UCLA </span> and primarily program in TypeScript or associated JavaScript frameworks (React is my #1).</p>
-            <br/>
-            <p>I have <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5]"> 2 years of software development experience </span> from start-ups to instituions like Monterey Peninsula College (MPC) & Iowa State.  <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5]"> Fun Fact: </span> I graduated from MPC in high school </p>
-            <br/>
-            <p> I am always looking to better myself in this field--aspired to turn ideas into technological realities!</p>
-            <br/>
+            <h1 className="font-barcode text-5xl lg:text-6xl mt-auto mb-4">About</h1>
+            <p className="mb-3">I am a Computer Science student at <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5] hover:cursor-pointer" onClick={() => window.open("https://www.ucla.edu/")}> UCLA </span> and primarily program in TypeScript or associated JavaScript frameworks (React is my #1).</p>
+            
+            <p className="mb-3">I have <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5]"> 2 years of software development experience </span> from start-ups to instituions like Monterey Peninsula College (MPC) & Iowa State.  <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5]"> Fun Fact: </span> I graduated from MPC in high school </p>
+            <p className="mb-3"> I am always looking to better myself in this field--aspired to turn ideas into technological realities!</p>
+           
             <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5]">My Favorite Technologies: </span>
             <div className="flex ml-auto gap-2">
             {skills.map((skill, index) => (

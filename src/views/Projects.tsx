@@ -60,13 +60,9 @@ const ProjectCard: React.FC<Project> = ({title, type, description, link, skills}
           </span>
         ))}
             </div>
-
             <button onClick={() => window.open(link)} className="view-button text-md lg:text-lg p-2 w-[125px] ml-auto">View</button>
-
-        </div>
-        
+        </div> 
     )
-
 }
 
 export const Projects = () => {
