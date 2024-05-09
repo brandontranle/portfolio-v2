@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef  } from 'react';
 import React from "react";
 interface Skill {
 icon: string;
@@ -13,9 +13,36 @@ skills: Skill[];
 }
 
 const ProjectCard: React.FC<Project> = ({title, type, description, link, skills}) => {
+    const cardRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          setIsVisible(entry.isIntersecting);
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.7 
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
     return (
-        <div className="project-card p-5 pr-0 min-w-[400px] lg:min-w-[450px]">
-            <h1 className="text-4xl lg:text-6xl mt-auto">{title}</h1>
+        <div ref={cardRef} className={`project-card p-5 pr-0 min-w-[400px] lg:min-w-[450px] transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-30'}`}>
+        <h1 className="text-4xl lg:text-6xl mt-auto">{title}</h1>
             <h2 className="text-sm">{type}</h2>
             <p className="text-md lg:text-lg">{description}</p>
             <div className="flex flex-row ml-auto items-center gap-2" >
@@ -82,6 +109,49 @@ export const Projects = () => {
                 {icon: "react"},
                 {icon: "sass"},
                 {icon: "typescript"},
+            ]
+        },
+        {
+            title: "notzsh",
+            type: "Terminal Application",
+            description: "A mimic of shell command piping, such that the output of each command becomes the input for the next.",
+            link: "https://github.com/brandontranle/notzsh",
+            skills: [
+                {icon: "c"},
+                {icon: "python"},
+            ]
+        },
+        {
+            title: "Thriftopia",
+            type: "Web Application (Work in progress)",
+            description: "A thrift store for students! Desgined to help students sell or exchange goods to other students at nearby campuses!",
+            link: "https://github.com/brandontranle/thriftopia",
+            skills: [
+                {icon: "react"},
+                {icon: "typescript"},
+                {icon: "java"},
+                {icon: "mysql"},
+            ]
+        },
+        {
+            title: "Tug-o-Word",
+            type: "Web Application",
+            description: "Imagine tug-o-war but with your keyboard! Battle in an intense team fight or 1v1 with your typing speed.",
+            link: "https://github.com/brandontranle/tug-o-word",
+            skills: [
+                {icon: "laravel"},
+                {icon: "php"},
+                {icon: "mysql"},
+            ]
+        },
+        {
+            title: "Peach Party",
+            type: "Game",
+            description: "Peach and Yoshi battle around an obstacle course to collect the most coins while avoiding Bowser and Boo",
+            link: "https://github.com/brandontranle/peach-party",
+            skills: [
+                {icon: "cplusplus"},
+                {icon: "opengl"},
             ]
         }
         ]

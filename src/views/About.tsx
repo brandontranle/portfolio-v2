@@ -16,7 +16,7 @@ export const About = () => {
     }, []);
     return (
         <div className={`hidden text-right w-[450px] mt-auto lg:mt-0 ml-auto ${fadeIn ? 'fade-in' : ''}`}>         
-            <h1 className="font-barcode text-5xl lg:text-6xl mb-5">About</h1>
+            <h1 className="font-barcode text-5xl lg:text-6xl mb-4">About</h1>
             <p>I am a Computer Science student at <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5] hover:cursor-pointer" onClick={() => window.open("https://www.ucla.edu/")}> UCLA </span> and primarily program in TypeScript or associated JavaScript frameworks (React is my #1).</p>
             <br/>
             <p>I have <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5]"> 2 years of software development experience </span> from start-ups to instituions like Monterey Peninsula College (MPC) & Iowa State.  <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5]"> Fun Fact: </span> I graduated from MPC in high school </p>
