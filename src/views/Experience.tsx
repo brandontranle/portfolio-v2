@@ -24,7 +24,7 @@ const ExperienceCard: React.FC<Experience> = ({title, role, description, skills}
           {
             root: null,
             rootMargin: '0px',
-            threshold: 0.7 // Adjust this value based on when you want the card to fade in or out
+            threshold: 0.7
           }
         );
     

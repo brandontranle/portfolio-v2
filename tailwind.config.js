@@ -11,11 +11,13 @@ export default {
       darkSecondary: '#302A27', // Dark background secondary color
     },
     textColor: {
-      primary: "#807A76",
+      primary: "#DCDCDC",
     },
     fontFamily: {
       bigCalson: ["big-caslon-fb", "serif"],
       barcode: ["c39hrp36dlttnormal"],
+      neuzeitRegular: ["neuzeit-grotesk", "sans-serif"],
+      neuzeitBold: ["neuzeit-grotesk", "sans-serif"],
       //barcode2: ["c39hrp24dhtt"],
   }, 
     boxShadow:{

@@ -43,7 +43,7 @@ const ProjectCard: React.FC<Project> = ({title, type, description, link, skills}
     return (
         <div ref={cardRef} className={`project-card p-5 pr-0 min-w-[400px] lg:min-w-[450px] transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-30'}`}>
         <h1 className="text-4xl lg:text-6xl mt-auto">{title}</h1>
-            <h2 className="text-sm">{type}</h2>
+            <h2 className="text-sm text-[#AAAAAA]">{type}</h2>
             <p className="text-md lg:text-lg">{description}</p>
             <div className="flex flex-row ml-auto items-center gap-2" >
             {skills.map((skill, index) => (
@@ -59,8 +59,9 @@ const ProjectCard: React.FC<Project> = ({title, type, description, link, skills}
             ></i>
           </span>
         ))}
+                    <button onClick={() => window.open(link)} className="view-button text-md lg:text-lg p-2 w-[125px] ml-auto">View</button>
+
             </div>
-            <button onClick={() => window.open(link)} className="view-button text-md lg:text-lg p-2 w-[125px] ml-auto">View</button>
         </div> 
     )
 }
@@ -159,7 +160,7 @@ export const Projects = () => {
     return (
         <div className={`text-right w-full h-full ml-auto ${fadeIn ? 'fade-in' : 'hidden'}`}>         
             <h1 className="font-barcode text-5xl lg:text-6xl mt-auto ml-auto">Projects</h1>
-            <div className="projects-container flex max-w-[917px]">
+            <div className="projects-container flex max-w-[1497px]">
             {projects.map((project, index) => (
                 <ProjectCard key={index} {...project} />
             ))}
