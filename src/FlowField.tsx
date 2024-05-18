@@ -20,7 +20,7 @@ const FlowFieldComponent: React.FC = () => {
                 sketchInstance.current = null;
             }
         };
-    }, []);
+    }, [localStorage.getItem("darkMode")]);
 
     return <div className="absolute overflow-y-hidden" ref={sketchRef} />;
 };

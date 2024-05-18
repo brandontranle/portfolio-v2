@@ -39,7 +39,7 @@ function App() {
 
 
   return (
-    <div id="background" className="bg-secondary dark:bg-darkPrimary h-screen overflow-y-hidden flex-row flex text-primary font-bigCalson w-screen">
+    <div id="background" className="bg-secondary dark:bg-darkPrimary h-screen overflow-y-hidden flex-row flex  font-bigCalson w-screen text-black dark:text-primary">
     <FlowField />
       <div id="inner-content" className={`flex flex-col bg-transparent h-full w-full px-0 py-0 md:p-5 xl:pt-8  xl:px-20 2xl:pt-10  inner-content`}>
       <div className="flex-row flex h-full"> 

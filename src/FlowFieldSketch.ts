@@ -1,7 +1,5 @@
 import p5 from 'p5';
 
-
-
 export default function FlowFieldSketch(p: p5) {
   const points: p5.Vector[] = [];
   const initialPoints: p5.Vector[] = [];
@@ -12,10 +10,8 @@ export default function FlowFieldSketch(p: p5) {
   const maxPhaseDuration = 1000;
   let debounceTimer: number;
 
-  
-
   function initSketch() {
-    p.background(30); // Set the initial background color
+    localStorage.getItem("darkMode") === "true" ? p.background(30) : p.background(255);
     p.angleMode(p.DEGREES);
     p.noiseDetail(1, 0.5);
     points.length = 0;
@@ -39,7 +35,7 @@ export default function FlowFieldSketch(p: p5) {
 
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight);
-    p.background(30);
+    localStorage.getItem("darkMode") === "true" ? p.background(30) : p.background(255);
     p.angleMode(p.DEGREES);
     p.noiseDetail(1, 0.5);
 
@@ -60,7 +56,7 @@ export default function FlowFieldSketch(p: p5) {
   };
 
   
-  function debounce(func: any, delay: any) {
+  function debounce(func: () => void, delay: number) {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(func, delay) as unknown as number;
   }
@@ -76,22 +72,15 @@ export default function FlowFieldSketch(p: p5) {
     p.noStroke();
 
     if (!buildPhase) {
-      p.fill(30, 30, 30, 25);
+      localStorage.getItem("darkMode") === "true" ? p.fill(30, 30, 30, 25) : p.fill(255, 255, 255, 5); // White overlay with low opacity
       p.rect(0, 0, p.width, p.height);
     }
 
     points.forEach((point, i) => {
-      if (localStorage.getItem("darkMode") === "true") {
       const brightness = p.map(point.x, 0, p.width, 100, 140);
       const alpha = p.map(p.dist(p.width / 2, p.height / 2, point.x, point.y), 0, 350, 255, 0);
       p.fill(brightness, brightness, brightness, alpha);
-      } else {
-        console.log("light mode")
-      const brightness = p.map(point.x, 0, p.width, 80, 120);
-      const alpha = p.map(p.dist(p.width / 2, p.height / 2, point.x, point.y), 0, 350, 255, 0);
-      p.fill(brightness, brightness, brightness, alpha);
-
-      }
+     
 
       let moveVec: p5.Vector;
 
@@ -124,7 +113,7 @@ export default function FlowFieldSketch(p: p5) {
           paths[i] = [];
         });
         mult = p.random(0.002, 0.01);
-        p.background(30);
+        localStorage.getItem("darkMode") === "true" ? p.background(30) : p.background(255);
       }
     }
   };

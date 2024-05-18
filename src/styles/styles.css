@@ -20,16 +20,22 @@ position: relative;
 overflow-x: hidden;
 overflow-y: hidden;
 background-clip: content-box; /* <---- */
-box-shadow: inset 0rem 0rem 5rem 0rem black; /* <-- 10px spread radius */
+box-shadow: inset 0rem 0rem 5rem 0rem white; /* <-- 10px spread radius */
+}
 
-/*filter: drop-shadow(-193px 4px 116px rgba(0, 0, 0, 0.1)) drop-shadow(-86px 0px 86px rgba(0, 0, 0, 0.2)) drop-shadow(-21px 0px 47px rgba(0, 0, 0, 0.2)) drop-shadow(193px 0px 116px rgba(0, 0, 0, 0.1)) drop-shadow(86px 0px 86px rgba(0, 0, 0, 0.17)) drop-shadow(21px 0px 47px rgba(0, 0, 0, 0.2));
-box-sizing: border-box;*/
+.dark .inner-content{
+  box-shadow: inset 0rem 0rem 5rem 0rem black; /* <-- 10px spread radius */
 
 }
 
 .content-area{
     box-sizing: border-box;
-    border: 3px solid #DCDCDC;
+    border: 3px solid black;
+}
+
+.dark .content-area{
+  border: 3px solid #DCDCDC ;
+
 }
 
 
@@ -53,6 +59,13 @@ input[type=checkbox] {
 }
 
 
+#name{
+  transition: color 0.1s ease;
+}
+
+#title{
+  transition: color 0.1s ease;
+}
 
 
 
@@ -112,24 +125,58 @@ font-style: normal;
     font-style: normal;
 }*/
 
-.redirect-item{
+.dark .redirect-item{
     color: #DCDCDC;
     text-decoration: none;
     transition: all 0.3s ease;
     align-items: center;
 }
 
+.redirect-item {
+  color: black;
+  opacity: 0.6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  transition: color 0.2s ease;
+  align-items: center;
+}
+
+.redirect-item.selected {
+  color: black;
+  opacity: 1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  transition: color 0.2s ease;
+  align-items: center;
+}
+
 .url-link{
-    color: #807A76;
+    color: black;
     text-decoration: none;
     transition: all 0.3s ease;
+    transition: color 0.2s ease;
+
     align-items: center;
 }
 
 .url-link:hover{
+  color: black;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.dark .url-link{
+    color: #DCDCDC;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    transition: color 0.2s ease;
+    align-items: center;
+}
+
+.dark .url-link:hover{
   opacity: 1; 
   cursor: pointer;
-  color: #302B27;
+  color: #c0bfbf;
 }
 
 
@@ -138,6 +185,7 @@ font-style: normal;
     opacity: 0; 
     color: #DCDCDC;
     transition: all 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 .dark .redirect-item{
@@ -166,15 +214,25 @@ font-style: normal;
   transition: opacity 0.5s ease, transform 0.5s ease; 
 }
 
+.dark .circle{
+  border: solid 2px #DCDCDC;
+}
+
 .circle{
   padding: 3px;
   border-radius: 50%;
-  border: solid 2px #DCDCDC;
+  border: solid 2px black;
   height: 10px;
   width: 10px;
 }
 
 .selected-circle{
+  background-color: black;
+  color: black;
+}
+
+
+.dark .selected-circle{
   background-color: #DCDCDC;
   color: #faf9f6;
 }
