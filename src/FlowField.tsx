@@ -20,7 +20,7 @@ const FlowFieldComponent: React.FC = () => {
         };
     }, []);
 
-    return <div className="absolute overflow-y-hidden h-screen w-screen" ref={sketchRef} />;
+    return <div id="flow-field" className="absolute overflow-y-hidden md:h-screen md:w-screen" ref={sketchRef} />;
 };
 
 export default FlowFieldComponent;
