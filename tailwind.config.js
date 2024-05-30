@@ -5,10 +5,10 @@ export default {
   content: [ "./index.html", "./src/**/*.{js,ts,jsx,tsx}", ], 
   theme: { extend: {
     backgroundColor: {
-      primary: "#FBF4EE",
-      secondary: "#F4EDE7",
-      darkPrimary: '#302B27', // Dark background primary color
-      darkSecondary: '#302A27', // Dark background secondary color
+      primary: "#FFFFFF",
+      secondary: "#FFFFFF",
+      darkPrimary: '#1E1E1E', // Dark background primary color
+      darkSecondary: '#1E1E1E', // Dark background secondary color
     },
     textColor: {
       primary: "#DCDCDC",

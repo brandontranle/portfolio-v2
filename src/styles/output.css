@@ -578,10 +578,6 @@ video {
   margin-bottom: 0.75rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -644,6 +640,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[500px\] {
+  width: 500px;
 }
 
 .min-w-\[400px\] {
@@ -711,9 +711,13 @@ video {
   overflow-y: hidden;
 }
 
+.whitespace-pre {
+  white-space: pre;
+}
+
 .bg-secondary {
   --tw-bg-opacity: 1;
-  background-color: rgb(244 237 231 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-transparent {
@@ -797,19 +801,27 @@ video {
   line-height: 1.25rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
 .text-\[\#302B27\] {
   --tw-text-opacity: 1;
   color: rgb(48 43 39 / var(--tw-text-opacity));
 }
 
-.text-\[\#AAAAAA\] {
-  --tw-text-opacity: 1;
-  color: rgb(170 170 170 / var(--tw-text-opacity));
-}
-
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .opacity-100 {
@@ -1090,14 +1102,32 @@ input[type=checkbox]:before {
   color: #faf9f6;
 }
 
+.dark .view-button {
+  border: 2px solid #DCDCDC;
+}
+
 .view-button {
   background-color: transparent;
-  border: 2px solid #DCDCDC;
+  border: 2px solid black;
   text-align: center;
 }
 
-.icon-color{
+.view-button:hover {
+  color: rgb(117, 117, 117);
+  border: 2px solid rgb(117, 117, 117);
+}
+
+.dark .view-button:hover {
+  color: rgb(126, 126, 126);
+  border: 2px solid rgb(126, 126, 126);
+}
+
+.dark .icon-color{
   color: #DCDCDC !important;
+}
+
+.icon-color{
+  color: black !important;
 }
 
 @keyframes fadeIn {
@@ -1193,7 +1223,7 @@ url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/20
 }
 
 * {
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.03s ease, background-color 0.05s ease;
 }
 
 .before\:hidden::before {
@@ -1205,9 +1235,18 @@ url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/20
   cursor: pointer;
 }
 
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
 .dark\:bg-darkPrimary:is(.dark *) {
   --tw-bg-opacity: 1;
-  background-color: rgb(48 43 39 / var(--tw-bg-opacity));
+  background-color: rgb(30 30 30 / var(--tw-bg-opacity));
+}
+
+.dark\:text-\[\#AAAAAA\]:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(170 170 170 / var(--tw-text-opacity));
 }
 
 .dark\:text-primary:is(.dark *) {
@@ -1231,6 +1270,10 @@ url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/20
 
   .md\:mb-3 {
     margin-bottom: 0.75rem;
+  }
+
+  .md\:mb-4 {
+    margin-bottom: 1rem;
   }
 
   .md\:mb-5 {

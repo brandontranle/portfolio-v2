@@ -8,19 +8,17 @@ const FlowFieldComponent: React.FC = () => {
 
     useEffect(() => {
         if (sketchRef.current && !sketchInstance.current) {
-            // Only initialize if there's not already an instance
-            console.log("instance does not exist");
             sketchInstance.current = new p5(FlowFieldSketch, sketchRef.current);
         }
 
         return () => {
-            // Cleanup the sketch on component unmount
             if (sketchInstance.current) {
                 sketchInstance.current.remove();
                 sketchInstance.current = null;
+                console.log("Sketch removed!");
             }
         };
-    }, [localStorage.getItem("darkMode")]);
+    }, []);
 
     return <div className="absolute overflow-y-hidden" ref={sketchRef} />;
 };

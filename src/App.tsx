@@ -5,6 +5,8 @@ import {Projects} from "./views/Projects";
 import {Experience} from "./views/Experience";
 import {useState, useEffect} from "react";
 import FlowField from "./FlowField";
+import { setItemWithEvent } from './hooks/localStorageEvents'; // Assuming this is where the enhanced setItem function is exported
+
 
 import {
   Routes,
@@ -19,17 +21,30 @@ function App() {
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    applyTheme(savedTheme);
+
+    const handleThemeChange = (event: CustomEvent) => {
+      if (event.detail.key === 'theme') {
+        const newTheme = event.detail.value;
+        setTheme(newTheme);
+        applyTheme(newTheme);
+      }
+    };
+
+    window.addEventListener('localStorageChanged', handleThemeChange as EventListener);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('localStorageChanged', handleThemeChange as EventListener);
+    };
   }, []);
-  
+
   const toggleTheme = (newTheme: string) => {
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    localStorage.setItem('darkMode', newTheme === 'dark' ? 'true' : 'false')
+    localStorage.setItem('darkMode', newTheme === 'dark' ? 'true' : 'false');
+    setItemWithEvent('theme', newTheme);
+  };
+
+  const applyTheme = (newTheme: string) => {
     if (newTheme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
@@ -68,7 +83,7 @@ function App() {
         </div>
         <span className="text-sm mt-auto xl:hidden flex flex-row">
         <span className="mr-auto"> 
-         © 2023 Brandon Le | All Rights Reserved 
+         © 2024 Brandon Le | All Rights Reserved 
          </span>
         <div className="flex flex-row gap-3 ml-auto font-neuzeitRegular">
         <div onClick={() => toggleTheme("light")} className="flex hover:cursor-pointer gap-1 items-center text-sm font-neuzeitRegular"> Light <div className={`circle ${theme === "light" ? "selected-circle" : ""}`}/> </div>
@@ -81,7 +96,7 @@ function App() {
 
         </div>
         <span className="hidden xl:block font-neuzeitRegular ml-5" >
-         © 2023 Brandon Le | All Rights Reserved
+         © 2024 Brandon Le | All Rights Reserved
         </span>
       </div>
       

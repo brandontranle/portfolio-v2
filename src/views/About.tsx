@@ -4,10 +4,10 @@ export const About = () => {
     const skills = [
         { icon: "react" },
         { icon: "typescript" },
+        { icon: "javascript" },
         { icon: "python" },
         { icon: "csharp" },
         { icon: "nodejs" },
-        { icon: "javascript" },
     ];
 
     useEffect(() => {
@@ -16,13 +16,15 @@ export const About = () => {
     }, []);
     return (
         <div className={`hidden text-right w-[450px] mt-auto lg:mt-0 ml-auto ${fadeIn ? 'fade-in' : ''}`}>         
-            <h1 className="font-barcode text-5xl lg:text-6xl mt-auto mb-4">About</h1>
-            <p className="mb-3">I am a Computer Science student at <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5] hover:cursor-pointer" onClick={() => window.open("https://www.ucla.edu/")}> UCLA </span> and primarily program in TypeScript or associated JavaScript frameworks (React is my #1).</p>
-            
-            <p className="mb-3">I have <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5]"> 2 years of software development experience </span> from start-ups to instituions like Monterey Peninsula College (MPC) & Iowa State.  <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5]"> Fun Fact: </span> I graduated from MPC in high school </p>
-            <p className="mb-3"> I am always looking to better myself in this field--aspired to turn ideas into technological realities!</p>
+            <h1 className="font-barcode text-5xl lg:text-6xl mt-auto md:mb-4">About</h1>
+            <p className="mb-3">I am a Computer Science student at <span className="text-white  dark:text-white font-bold hover:cursor-pointer italic" onClick={() => window.open("https://www.ucla.edu/")}> UCLA </span> and primarily program in TypeScript or JavaScript frameworks.</p>
+            <span className="mb-3">
+              <p >I have <span className="text-black dark:text-white font-bold"> 2 years of software development experience </span> from start-ups to academic instituions to founding a non-profit </p>
+              <p> <span className="text-black font-bold dark:text-white "> Fun Fact: </span> I graduated from <span className="italic hover:cursor-pointer" onClick={() => window.open("https://www.mpusd.net/apps/pages/index.jsp?uREC_ID=1424772&type=d&pREC_ID=2310303")}> Monterey Peninsula College </span> at age 17 </p>
+            </span>
+            <p className="mb-3"> I am always looking to better myself in this field--aspired to turn product ideas into technological realities!</p>
            
-            <span className="text-[#302B27] opacity-[0.8] dark:text-white dark:opacity-[0.5]">My Favorite Technologies: </span>
+            <span className="text-black dark:text-white font-bold">My Favorite Technologies: </span>
             <div className="flex ml-auto gap-2">
             {skills.map((skill, index) => (
           <span className="flex items-center gap-2 text-lg" key={index}>

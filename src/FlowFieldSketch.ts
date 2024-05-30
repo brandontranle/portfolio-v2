@@ -11,10 +11,12 @@ export default function FlowFieldSketch(p: p5) {
   let debounceTimer: number;
 
   function initSketch() {
-    localStorage.getItem("darkMode") === "true" ? p.background(30) : p.background(255);
+    localStorage.getItem("darkMode") === "true" ? (p.background(30)) : (p.background(255));
+    p.resizeCanvas(p.windowWidth, p.windowHeight);
     p.angleMode(p.DEGREES);
     p.noiseDetail(1, 0.5);
     points.length = 0;
+    buildPhase = true;
     initialPoints.length = 0;
     paths.length = 0;
 
@@ -35,6 +37,7 @@ export default function FlowFieldSketch(p: p5) {
 
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight);
+    window.addEventListener('localStorageChanged', handleResize);
     localStorage.getItem("darkMode") === "true" ? p.background(30) : p.background(255);
     p.angleMode(p.DEGREES);
     p.noiseDetail(1, 0.5);
@@ -62,18 +65,28 @@ export default function FlowFieldSketch(p: p5) {
   }
 
   p.windowResized = () => {
+    console.log("resizing...")
     debounce(() => {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
       initSketch();
-    }, 250); // Delay of 250 milliseconds
+    }, 100); 
   };
+  
+  function handleResize() {
+    clearTimeout(debounceTimer);
+    console.log("local storage changed!")
+    debounceTimer = window.setTimeout(() => {
+      p.resizeCanvas(p.windowWidth, p.windowHeight);
+      initSketch();
+    }, 100);
+  }
 
   p.draw = () => {
     p.noStroke();
 
     if (!buildPhase) {
-      localStorage.getItem("darkMode") === "true" ? p.fill(30, 30, 30, 25) : p.fill(255, 255, 255, 5); // White overlay with low opacity
-      p.rect(0, 0, p.width, p.height);
+      localStorage.getItem("darkMode") === "true" ? p.fill(30, 30, 30, 25) : p.fill(255, 255, 255, 5); 
+      p.rect(0, 0, p.width, p.height); //test this more! (original: p.width, p.height)
     }
 
     points.forEach((point, i) => {
@@ -118,6 +131,9 @@ export default function FlowFieldSketch(p: p5) {
     }
   };
 
- 
+  p.remove = () => {
+    window.removeEventListener('localStorageChanged', handleResize);
+  }
+
 }
 
