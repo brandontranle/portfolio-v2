@@ -15,7 +15,6 @@ const FlowFieldComponent: React.FC = () => {
             if (sketchInstance.current) {
                 sketchInstance.current.remove();
                 sketchInstance.current = null;
-                console.log("Sketch removed!");
             }
         };
     }, []);

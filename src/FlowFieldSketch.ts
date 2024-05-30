@@ -65,7 +65,6 @@ export default function FlowFieldSketch(p: p5) {
   }
 
   p.windowResized = () => {
-    console.log("resizing...")
     debounce(() => {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
       initSketch();
@@ -74,7 +73,6 @@ export default function FlowFieldSketch(p: p5) {
   
   function handleResize() {
     clearTimeout(debounceTimer);
-    console.log("local storage changed!")
     debounceTimer = window.setTimeout(() => {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
       initSketch();
