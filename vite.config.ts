@@ -8,4 +8,7 @@ export default defineConfig({
     algorithm: 'brotliCompress',
     filter: (assetFileName) => assetFileName.endsWith('.js') || assetFileName.endsWith('.css'),
   })],
+  server: {
+      host: true,
+  }
 });
