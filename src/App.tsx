@@ -65,7 +65,7 @@ function App() {
       </div>
         <div className="content-area p-5 md:p-8 lg:p-10 relative z-10 md:pb-2 h-full w-full flex flex-col before:hidden md:before:block font-neuzeitRegular">
           <h1 id="name" className="text-3xl mb-0 md:text-5xl xl:text-7xl md:mb-5 font-neuzeitBold">Brandon Le</h1>
-          <h2 id="title" className="text-md mb-0 md:text-2xl xl:text-4xl md:mb-3">S O F T W A R E &nbsp; E N G I N E E R</h2>
+          <h2 id="title" className="text-xs mb-0 md:text-2xl xl:text-4xl md:mb-3">S O F T W A R E &nbsp; E N G I N E E R</h2>
           <p className="text-sm md:text-lg mb-1"> Listened to Enchanted, by Taylor Swift, 8 hours ago. </p>
           <nav className="flex flex-col max-w-[100px]">
             <Link className={`redirect-item text-sm md:text-lg ${location.pathname === '/' ? 'selected' : ''}`} to="/">Home</Link>
