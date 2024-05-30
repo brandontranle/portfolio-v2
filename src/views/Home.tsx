@@ -13,11 +13,12 @@ export const Home = () => {
             <p className="mb-3"> <span className="dot"></span> <span className="text-black  dark:text-white  font-bold"> Status: </span> <a href="https://vitametrics.org"> Operating Vitametrics for alpha testing!  </a> </p>
             <p className="mb-3"> <span className="font-bold text-black  dark:text-white"> Outside of Work: </span> Runner, Pianist, Tech Enthusiast, Gamer.</p>
             <p className="mb-3"> <span className="font-bold text-black  dark:text-white "> A Quote To Describe Me: </span> "Run fast, still last." </p>
+            <span className="flex flex-col max-w-[100px] text-right ml-auto">
                 <span onClick={() => window.open("https://www.linkedin.com/in/brandon-tran-le/")} className="url-link">LinkedIn</span>
                 <span onClick={() => window.open("https://github.com/brandontranle")} className="url-link">GitHub</span>
                 <span onClick={() => window.open("https://brandon-le-resume.tiiny.site/")}  className="url-link">Resume</span>
                 <a href="mailto:brandonle831@gmail.com"  className="url-link">Email </a>
-
+                </span>
         </div>
     );
 }

@@ -82,7 +82,7 @@ function App() {
               
           </Routes>
         </div>
-        <span className="text-sm mt-auto xl:hidden flex flex-row">
+        <span className="text-xs mt-auto md:text-sm xl:hidden flex flex-row">
         <span className="mr-auto"> 
          © 2024 Brandon Le | All Rights Reserved 
          </span>
