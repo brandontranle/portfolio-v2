@@ -157,8 +157,8 @@ export const Projects = () => {
         return () => setFadeIn(false); // Clean up the state when the component unmounts
     }, []);
     return (
-        <div className={`text-right w-full h-full ml-auto ${fadeIn ? 'fade-in' : 'hidden'}`}>         
-            <h1 className="font-barcode text-5xl lg:text-6xl mt-auto ml-auto">Projects</h1>
+        <div className={`text-right w-full h-full ml-auto text-sm md:text-lg ${fadeIn ? 'fade-in' : 'hidden'}`}>         
+            <h1 className="font-barcode text-4xl md:text-5xl lg:text-6xl mt-auto ml-auto">Projects</h1>
             <div className="projects-container flex max-w-[1497px]">
             {projects.map((project, index) => (
                 <ProjectCard key={index} {...project} />

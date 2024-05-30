@@ -41,7 +41,7 @@ const ExperienceCard: React.FC<Experience> = ({title, role, description, skills}
     
 
     return (
-        <div ref={cardRef} className={`project-card pr-0 max-w-[500px] ml-auto transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-30'}`}>
+        <div ref={cardRef} className={`project-card pr-0 max-w-[500px] ml-auto transition-opacity duration-500 mb-3 ${isVisible ? 'opacity-100' : 'opacity-30'}`}>
         <h1 className="text-2xl md:text-4xl">{title}</h1>
             <h3 className="text-md">{role}</h3>
             <ul style={{ listStyleType: 'disc', listStylePosition: 'inside'}}>
@@ -81,8 +81,8 @@ export const Experience = () => {
         return () => setFadeIn(false); // Clean up the state when the component unmounts
     }, []);
     return (
-        <div className={`text-right w-full ml-auto ${fadeIn ? 'fade-in' : 'hidden'} xl:max-h-[365px] flex justify-end`}>     
-            <h1 className="font-barcode text-5xl lg:text-6xl md:mb-5 mt-auto ml-auto">Experience</h1>
+        <div className={`text-right text-sm md:text-lg w-full ml-auto ${fadeIn ? 'fade-in' : 'hidden'} xl:max-h-[365px] flex justify-end`}>     
+            <h1 className="font-barcode text-4xl md:text-5xl lg:text-6xl md:mb-5 mt-auto ml-auto">Experience</h1>
             <div className="overflow-y-auto experience-container overflow-x-hidden"  >
                 <ExperienceCard title="Vitametrics" role="Founder, Software Developer - Jan. 2024 to Present" description={["Associated with 2 academic institutions for product beta testing", "Spearheading the frontend in Typescript where universities can connect Fitbit technology using Fitbit’s Intraday API", "Completed thorough QA testing with Google Lightouse scoring at least a 99 on performance among most pages."]} skills={[{icon: "react"}, {icon: "nodejs"}, {icon: "mongodb"}, {icon: "docker"}, {icon: "express"}, {icon: "typescript"}]}/>
                 <ExperienceCard title="Intern Guys" role="Software Engineer Intern - Jan. 2024 to Mar.2024" description={["Optimized C# job search algorithm to 50% faster search time and 75% in job matching accuracy.", "Directed full-stack solutions for a blog and writing interface for the CEO to streamline advice and promote start-ups to users."]} skills={[{icon: "react"}, {icon: "csharp"}, {icon: "mysql"}, {icon: "javascript"}]}/>
