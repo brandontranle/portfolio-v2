@@ -1215,10 +1215,12 @@ body {
 @media screen and (max-width: 600px) {
   html 
   body, 
-  #root,
-  #flow-field {
-    height: 95vh;
+  #root {
+    height: 100vh;
+    overflow: hidden;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -1278,14 +1280,6 @@ body {
 
   .md\:block {
     display: block;
-  }
-
-  .md\:h-screen {
-    height: 100vh;
-  }
-
-  .md\:w-screen {
-    width: 100vw;
   }
 
   .md\:p-5 {
