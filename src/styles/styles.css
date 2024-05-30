@@ -387,8 +387,7 @@ body {
 @media screen and (max-width: 600px) {
   html 
   body, 
-  #root,
-  #flow-field {
+  #root {
     height: 95vh;
     width: 100vw;
   }  
