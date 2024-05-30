@@ -21,6 +21,7 @@ function App() {
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
+    toggleTheme(savedTheme);
     applyTheme(savedTheme);
 
     const handleThemeChange = (event: CustomEvent) => {
