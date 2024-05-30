@@ -122,7 +122,7 @@ export default function FlowFieldSketch(p: p5) {
       buildPhase = !buildPhase;
       phaseCounter = 0;
       if (buildPhase) {
-        paths.forEach((path, i) => {
+        paths.forEach((_path, i) => {
           paths[i] = [];
         });
         mult = p.random(0.002, 0.01);
