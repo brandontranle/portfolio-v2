@@ -67,7 +67,7 @@ function App() {
           <h1 id="name" className="text-3xl mb-0 md:text-5xl xl:text-7xl md:mb-5 font-neuzeitBold">Brandon Le</h1>
           <h2 id="title" className="text-xs mb-0 md:text-2xl xl:text-4xl md:mb-3">S O F T W A R E &nbsp; E N G I N E E R</h2>
           <p className="hidden md:text-lg md:block md:mb-1"> Listened to Enchanted, by Taylor Swift, 8 hours ago. </p>
-          <nav className="flex flex-col max-w-[100px] mt-1 md:mt-0">
+          <nav className="flex flex-col gap-2 md:gap-0 max-w-[100px] mt-4 md:mt-0">
             <Link className={`redirect-item text-sm md:text-lg ${location.pathname === '/' ? 'selected' : ''}`} to="/">Home</Link>
             <Link className={`redirect-item text-sm md:text-lg ${location.pathname === '/about' ? 'selected' : ''}`} to="/about">About</Link>
             <Link className={`redirect-item text-sm md:text-lg ${location.pathname === '/projects' ? 'selected' : ''}`} to="/projects">Projects</Link>
@@ -87,8 +87,8 @@ function App() {
          © 2024 Brandon Le | All Rights Reserved 
          </span>
         <div className="flex flex-row gap-3 ml-auto font-neuzeitRegular">
-        <div onClick={() => toggleTheme("light")} className="flex hover:cursor-pointer gap-1 items-center text-sm font-neuzeitRegular"> Light <div className={`circle ${theme === "light" ? "selected-circle" : ""}`}/> </div>
-        <div onClick={() => toggleTheme("dark")} className="hover:cursor-pointer flex gap-1 items-center text-sm font-neuzeitRegular"> Dark <div className={`circle ${theme === "dark" ? "selected-circle" : ""}`}/>  </div>
+        <div onClick={() => toggleTheme("light")} className="flex hover:cursor-pointer gap-1 items-center font-neuzeitRegular"> Light <div className={`circle ${theme === "light" ? "selected-circle" : ""}`}/> </div>
+        <div onClick={() => toggleTheme("dark")} className="hover:cursor-pointer flex gap-1 items-center font-neuzeitRegular"> Dark <div className={`circle ${theme === "dark" ? "selected-circle" : ""}`}/>  </div>
         </div>
       </span>
 
