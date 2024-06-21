@@ -352,8 +352,7 @@ cursor: pointer;
 
 .projects-container{
   scroll-snap-type: x mandatory; 
-  overflow-x: auto;
-
+  overflow-x: scroll;
 }
 
 .experience-container{

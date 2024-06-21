@@ -4,7 +4,7 @@ import {About} from "./views/About";
 import {Projects} from "./views/Projects";
 import {Experience} from "./views/Experience";
 import {useState, useEffect} from "react";
-import FlowField from "./FlowField";
+import FlowField from "./components/FlowField";
 import { setItemWithEvent } from './hooks/localStorageEvents'; // Assuming this is where the enhanced setItem function is exported
 
 
