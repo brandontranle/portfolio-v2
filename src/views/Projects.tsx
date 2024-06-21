@@ -59,7 +59,7 @@ const ProjectCard: React.FC<Project> = ({title, type, description, link, skills}
 
 export const Projects = () => {
     const [fadeIn, setFadeIn] = useState(false);
-    const itemToScroll = document.getElementById("projects-container") || document.createElement("div");
+    const projectsContainerRef = useRef<HTMLDivElement>(null);
 
 
     useEffect(() => {
@@ -71,12 +71,13 @@ export const Projects = () => {
       const handleWheel = (e: WheelEvent) => {
         if (Math.abs(e.deltaY) > 0) {
           e.preventDefault();
-          itemToScroll.scrollLeft +=e.deltaY;
-        }      
+          if (projectsContainerRef.current) {
+            projectsContainerRef.current.scrollLeft += e.deltaY;
+          }
+        }
       };
-
-      const container = document.getElementById("projects-container");
   
+      const container = projectsContainerRef.current;
       if (container) {
         container.addEventListener('wheel', handleWheel);
       }
@@ -91,7 +92,7 @@ export const Projects = () => {
     return (
         <div  className={`text-right w-full h-full ml-auto text-sm md:text-lg ${fadeIn ? 'fade-in' : 'hidden'}`}>         
             <h1 className="font-barcode text-4xl md:text-5xl lg:text-6xl mt-auto ml-auto">Projects</h1>
-            <div id="projects-container" className="projects-container flex">
+            <div id="projects-container" className="projects-container flex" ref={projectsContainerRef}> 
             {projects.map((project, index) => (
                 <ProjectCard key={index} {...project} />
             ))}
