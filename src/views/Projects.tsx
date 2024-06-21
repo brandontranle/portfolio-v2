@@ -18,7 +18,7 @@ const ProjectCard: React.FC<Project> = ({title, type, description, link, skills}
       {
         root: null,
         rootMargin: '0px',
-        threshold: 1 
+        threshold: 0.8 
       }
     );
 
