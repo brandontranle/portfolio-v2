@@ -87,7 +87,7 @@ function App() {
         </div>
         <span className="text-xs mt-auto md:text-sm xl:hidden flex flex-row">
         <span className="mr-auto"> 
-         © 2024 Brandon Le | All Rights Reserved 
+         © 2024 Brandon Le 
          </span>
         <div className="flex flex-row gap-3 ml-auto font-neuzeitRegular">
         <div onClick={() => toggleTheme("light")} className="flex hover:cursor-pointer gap-1 items-center font-neuzeitRegular"> Light <div className={`circle ${theme === "light" ? "selected-circle" : ""}`}/> </div>
