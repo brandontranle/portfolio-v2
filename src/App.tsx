@@ -41,12 +41,12 @@ function App() {
   }, []);
 
   const toggleTheme = (newTheme: string) => {
-    localStorage.setItem('darkMode', newTheme === 'dark' ? 'true' : 'false');
+    localStorage.setItem('darkMode', newTheme === 'dark' ? 'true' : newTheme === 'color' ? 'true' : 'false');
     setItemWithEvent('theme', newTheme);
   };
 
   const applyTheme = (newTheme: string) => {
-    if (newTheme === 'dark') {
+    if (newTheme === 'dark' || newTheme === 'color') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
@@ -57,16 +57,18 @@ function App() {
   return (
     <div id="background" className="bg-secondary dark:bg-darkPrimary h-screen overflow-y-hidden flex-row flex  font-bigCalson w-screen text-black dark:text-primary">
     <FlowField />
-      <div id="inner-content" className={`flex flex-col bg-transparent h-full w-full px-0 py-0 md:p-5 xl:pt-8  xl:px-20 2xl:pt-10  inner-content`}>
-      <div className="flex-row flex h-full"> 
+      <div id="inner-content" className={`flex-col bg-transparent h-full w-full px-0 py-0 md:p-5 xl:pt-8  xl:px-20 2xl:py-10  inner-content`}>
+      <div id="parent" className="flex h-full"> 
       <div id="options" className="hidden xl:flex h-full flex-col rotate-[-180deg] gap-5 mb-5 font-neuzeitRegular w-[25px]">
         <div onClick={() => toggleTheme("light")} className="flex flip-vertical hover:cursor-pointer gap-1 items-center"> Light <div className={`circle ${theme === "light" ? "selected-circle" : ""}`}/> </div>
         <div onClick={() => toggleTheme("dark")} className="flip-vertical hover:cursor-pointer flex gap-1 items-center"> Dark <div className={`circle ${theme === "dark" ? "selected-circle" : ""}`}/>  </div>
+        <div onClick={() => toggleTheme("color")} className="flip-vertical hover:cursor-pointer flex gap-1 items-center"> Color <div className={`circle ${theme === "color" ? "selected-circle" : ""}`}/>  </div>
+
       </div>
-        <div className="content-area p-5 md:p-8 lg:p-10 relative z-10 md:pb-2 h-full w-full flex flex-col before:hidden md:before:block font-neuzeitRegular">
+        <div className="content-area p-5 md:p-8 lg:p-10 relative z-10 md:pb-2 h-full w-full flex flex-col before:hidden md:before:block font-neuzeitRegular flex-shrink-0">
           <h1 id="name" className="text-3xl mb-0 md:text-5xl xl:text-7xl md:mb-5 font-neuzeitBold">Brandon Le</h1>
           <h2 id="title" className="text-xs mb-0 md:text-2xl xl:text-4xl md:mb-3">S O F T W A R E &nbsp; E N G I N E E R</h2>
-          <p className="hidden md:text-lg md:block md:mb-1"> Listened to Enchanted, by Taylor Swift, 8 hours ago. </p>
+          {/*<p className="hidden md:text-lg md:block md:mb-1"> Listened to Enchanted, by Taylor Swift, 8 hours ago. </p>*/}
           <nav className="flex flex-col gap-2 md:gap-0 max-w-[100px] mt-4 md:mt-0">
             <Link className={`redirect-item text-sm md:text-lg ${location.pathname === '/' ? 'selected' : ''}`} to="/">Home</Link>
             <Link className={`redirect-item text-sm md:text-lg ${location.pathname === '/about' ? 'selected' : ''}`} to="/about">About</Link>
@@ -89,6 +91,7 @@ function App() {
         <div className="flex flex-row gap-3 ml-auto font-neuzeitRegular">
         <div onClick={() => toggleTheme("light")} className="flex hover:cursor-pointer gap-1 items-center font-neuzeitRegular"> Light <div className={`circle ${theme === "light" ? "selected-circle" : ""}`}/> </div>
         <div onClick={() => toggleTheme("dark")} className="hover:cursor-pointer flex gap-1 items-center font-neuzeitRegular"> Dark <div className={`circle ${theme === "dark" ? "selected-circle" : ""}`}/>  </div>
+        <div onClick={() => toggleTheme("color")} className="hover:cursor-pointer flex gap-1 items-center font-neuzeitRegular"> Color <div className={`circle ${theme === "dark" ? "selected-circle" : ""}`}/>  </div>
         </div>
       </span>
 

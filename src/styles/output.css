@@ -598,20 +598,12 @@ video {
   margin-right: auto;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
 }
 
 .flex {
@@ -646,6 +638,10 @@ video {
   width: 450px;
 }
 
+.w-\[550px\] {
+  width: 550px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -662,12 +658,12 @@ video {
   max-width: 100px;
 }
 
-.max-w-\[1497px\] {
-  max-width: 1497px;
-}
-
 .max-w-\[500px\] {
   max-width: 500px;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 
 .rotate-\[-180deg\] {
@@ -1074,8 +1070,8 @@ input[type=checkbox]:before {
 }
 
 .dark .selected {
-  opacity: 0.7;
-  color: white;
+  opacity: 1;
+  color: #DCDCDC;
 }
 
 .dark .selected::after {
@@ -1158,13 +1154,17 @@ input[type=checkbox]:before {
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #302B27;
+  background: #525252;
+}
+
+.experience-container .experience-card:last-child {
+  margin-bottom: 0;
 }
 
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-  background: #807A76;
+  background: #bcbcbc;
 }
 
 ::-webkit-scrollbar-thumb:horizontal{
@@ -1189,6 +1189,17 @@ input[type=checkbox]:before {
 
 .project-card{
   display: grid;
+  margin-bottom: 1rem;
+  grid-template-rows: auto auto 1fr auto auto;
+  /* Defines the five rows */
+  align-items: start;
+  /* Align items at the start of each grid row */
+  text-align: right;
+}
+
+.experience-card{
+  display: grid;
+  margin-bottom: 2rem;
   grid-template-rows: auto auto 1fr auto auto;
   /* Defines the five rows */
   align-items: start;
@@ -1363,10 +1374,6 @@ body {
     display: none;
   }
 
-  .xl\:max-h-\[365px\] {
-    max-height: 365px;
-  }
-
   .xl\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
@@ -1388,7 +1395,8 @@ body {
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:pt-10 {
+  .\32xl\:py-10 {
     padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 }

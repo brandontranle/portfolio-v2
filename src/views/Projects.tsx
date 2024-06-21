@@ -159,7 +159,7 @@ export const Projects = () => {
     return (
         <div className={`text-right w-full h-full ml-auto text-sm md:text-lg ${fadeIn ? 'fade-in' : 'hidden'}`}>         
             <h1 className="font-barcode text-4xl md:text-5xl lg:text-6xl mt-auto ml-auto">Projects</h1>
-            <div className="projects-container flex max-w-[1497px]">
+            <div className="projects-container flex">
             {projects.map((project, index) => (
                 <ProjectCard key={index} {...project} />
             ))}

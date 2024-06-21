@@ -15,7 +15,7 @@ export const About = () => {
         return () => setFadeIn(false); // Clean up the state when the component unmounts
     }, []);
     return (
-        <div className={`hidden text-sm md:text-lg text-right w-[450px] mt-auto lg:mt-0 ml-auto ${fadeIn ? 'fade-in' : ''}`}>         
+        <div className={`hidden text-sm md:text-lg text-right w-[550px] mt-auto lg:mt-0 ml-auto ${fadeIn ? 'fade-in' : ''}`}>         
             <h1 className="font-barcode text-4xl md:text-5xl lg:text-6xl mt-auto md:mb-4">About</h1>
             <p className=" mb-3">I am a Computer Science student at <span className="text-black  dark:text-white font-bold hover:cursor-pointer italic" onClick={() => window.open("https://www.ucla.edu/")}> UCLA </span> and primarily program in TypeScript or JavaScript frameworks.</p>
             <span className="mb-3">
