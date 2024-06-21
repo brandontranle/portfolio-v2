@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // localStorageEvents.js
-function emitLocalStorageChanged(key: any, value: any) {
+function emitlocalStorageChanged(key: any, value: any) {
     const event = new CustomEvent('localStorageChanged', {
       detail: { key, value }
     });
@@ -9,6 +9,6 @@ function emitLocalStorageChanged(key: any, value: any) {
   
   export function setItemWithEvent(key: string, value: string) {
     localStorage.setItem(key, value);
-    emitLocalStorageChanged(key, value);
+    emitlocalStorageChanged(key, value);
   }
   

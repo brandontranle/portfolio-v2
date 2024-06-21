@@ -16,7 +16,7 @@ import {
 
 function App() {
   const location = useLocation();
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -34,7 +34,6 @@ function App() {
 
     window.addEventListener('localStorageChanged', handleThemeChange as EventListener);
 
-    // Cleanup listener on component unmount
     return () => {
       window.removeEventListener('localStorageChanged', handleThemeChange as EventListener);
     };
@@ -91,7 +90,7 @@ function App() {
         <div className="flex flex-row gap-3 ml-auto font-neuzeitRegular">
         <div onClick={() => toggleTheme("light")} className="flex hover:cursor-pointer gap-1 items-center font-neuzeitRegular"> Light <div className={`circle ${theme === "light" ? "selected-circle" : ""}`}/> </div>
         <div onClick={() => toggleTheme("dark")} className="hover:cursor-pointer flex gap-1 items-center font-neuzeitRegular"> Dark <div className={`circle ${theme === "dark" ? "selected-circle" : ""}`}/>  </div>
-        <div onClick={() => toggleTheme("color")} className="hover:cursor-pointer flex gap-1 items-center font-neuzeitRegular"> Color <div className={`circle ${theme === "dark" ? "selected-circle" : ""}`}/>  </div>
+        <div onClick={() => toggleTheme("color")} className="hover:cursor-pointer flex gap-1 items-center font-neuzeitRegular"> Color <div className={`circle ${theme === "color" ? "selected-circle" : ""}`}/>  </div>
         </div>
       </span>
 
