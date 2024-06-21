@@ -16,7 +16,7 @@ export const Home = () => {
             <span className="flex flex-col max-w-[100px] text-right ml-auto">
                 <span onClick={() => window.open("https://www.linkedin.com/in/brandon-tran-le/")} className="url-link">LinkedIn</span>
                 <span onClick={() => window.open("https://github.com/brandontranle")} className="url-link">GitHub</span>
-                <span onClick={() => window.open("https://brandon-le-resume.tiiny.site/")}  className="url-link">Resume</span>
+                <span onClick={() => window.open("https://brandonle.dev/resume.pdf")}  className="url-link">Resume</span>
                 <a href="mailto:brandonle831@gmail.com"  className="url-link">Email </a>
                 </span>
         </div>

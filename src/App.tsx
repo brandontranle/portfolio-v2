@@ -81,7 +81,8 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/experience" element={<Experience/>} />
-              
+              <Route path="/*" element={<Home />} />
+              <Route path="/resume" element={<a href="https://brandonle.dev/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>} />
           </Routes>
         </div>
         <span className="text-xs mt-auto md:text-sm xl:hidden flex flex-row">
