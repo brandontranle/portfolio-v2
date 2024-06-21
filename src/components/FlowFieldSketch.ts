@@ -14,7 +14,6 @@ export default function FlowFieldSketch(p: p5) {
 
   function initSketch() {
     localStorage.getItem("darkMode") === "true" ? (p.background(30)) : (p.background(255));
-    localStorage.getItem("theme") === "color" ? (colorMode = true) : (colorMode = false);
     p.resizeCanvas(p.windowWidth, p.windowHeight);
     p.angleMode(p.DEGREES);
     p.noiseDetail(1, 0.5);
@@ -23,6 +22,7 @@ export default function FlowFieldSketch(p: p5) {
     initialPoints.length = 0;
     paths.length = 0;
     colorMode = localStorage.getItem("theme") === "color" ? true : false;
+    console.log("colorMode is " + colorMode)
 
     const density = 30;
     const space = p.width / density;
@@ -50,10 +50,18 @@ export default function FlowFieldSketch(p: p5) {
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight);
     window.addEventListener('localStorageChanged', handleResize);
+    localStorage.getItem("theme") === "color" ? colorMode = true : colorMode = false;
+    if (colorMode) {
+      r1 = p.random(255);
+      r2 = p.random(255);
+      g1 = p.random(255);
+      g2 = p.random(255);
+      b1 = p.random(255);
+      b2 = p.random(255);
+    }
     localStorage.getItem("darkMode") === "true" ? p.background(30) : p.background(255);
     p.angleMode(p.DEGREES);
     p.noiseDetail(1, 0.5);
-
     const density = 30;
     const space = p.width / density;
 
@@ -103,7 +111,6 @@ export default function FlowFieldSketch(p: p5) {
       const alpha = p.map(p.dist(p.width / 2, p.height / 2, point.x, point.y), 0, 350, 255, 0);
      
       if (colorMode) {
-
         const r = p.map(point.x, 0, p.width, r1, r2);
         const g = p.map(point.y, 0, p.height, g1, g2);
         const b = p.map(point.x, 0, p.width, b1, b2);

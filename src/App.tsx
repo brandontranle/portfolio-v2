@@ -19,6 +19,7 @@ function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
 
   useEffect(() => {
+    console.log("starting theme is", localStorage.getItem('theme') || 'dark');
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
     toggleTheme(savedTheme);

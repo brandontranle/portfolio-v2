@@ -749,6 +749,10 @@ video {
   overflow-y: hidden;
 }
 
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
