@@ -69,8 +69,6 @@ export const Projects = () => {
 
     useEffect(() => {
       const handleWheel = (e: WheelEvent) => {
-        console.log("scrolling")
-
         if (Math.abs(e.deltaY) > 0) {
           e.preventDefault();
           itemToScroll.scrollLeft +=e.deltaY;
