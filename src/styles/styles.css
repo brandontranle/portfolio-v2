@@ -156,6 +156,8 @@ font-style: normal;
 }
 
 
+
+
 .redirect-item::after{
     content: "☆";
     opacity: 0; 
@@ -186,6 +188,7 @@ font-style: normal;
 color: black;
 opacity: 1;
 transition: all 0.3s ease;
+transform: translateX(-3px);
 cursor: pointer;
 }
 
@@ -438,4 +441,37 @@ body {
     display: flex;
     flex-direction: column;
   }  
+}
+
+#name {
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.dark #name:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+#name:hover {
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.mode-option {
+  transition: transform 0.2s ease-in-out;
+}
+
+.mode-option:hover {
+  transform: translateX(3px);
+}
+
+.redirect-item {
+  transition: transform 0.2s ease-in-out;
+}
+
+.redirect-item:hover {
+  transform: translateX(3px);
+}
+
+
+.view-button {
+  transition: all 0.2s ease-in-out;
 }
