@@ -1229,7 +1229,7 @@ input[type=checkbox]:before {
 
 /* Handle */
 
-::-webkit-scrollbar-thumb {
+.dark ::-webkit-scrollbar-thumb {
   background: #bcbcbc;
 }
 
@@ -1237,10 +1237,24 @@ input[type=checkbox]:before {
   border-radius: 10px;
 }
 
-/* Handle on hover */
+::-webkit-scrollbar-thumb {
+  background: #272727;
+}
+
+::-webkit-scrollbar-track {
+  background: #ababab;
+}
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #000000;
+  cursor: pointer;
+}
+
+/* Handle on hover */
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #d5d5d5;
+  cursor: pointer;
 }
 
 .projects-container{
