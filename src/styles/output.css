@@ -749,10 +749,6 @@ video {
   overflow-y: hidden;
 }
 
-.overflow-y-scroll {
-  overflow-y: scroll;
-}
-
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1084,9 +1080,41 @@ input[type=checkbox]:before {
   color: black;
 }
 
+.color-selected{
+  background-color: #68A268;
+  color: #68A268;
+}
+
+.color-unselected{
+  background-color: none;
+  color: none;
+}
+
 .dark .selected-circle{
   background-color: #DCDCDC;
   color: #faf9f6;
+}
+
+.circle.unselected-circle{
+  background-color: none;
+  color: none;
+}
+
+.circle.color-selected{
+  background-color: #68A268;
+  color: #68A268;
+}
+
+.circle.color-selected:hover{
+  background-color: #854040 !important;
+  color: #854040 !important;
+  cursor: pointer;
+}
+
+.circle.color-unselected:hover{
+  background-color: #68A268 !important;
+  color: #68A268 !important;
+  cursor: pointer;
 }
 
 .circle:hover{

@@ -21,7 +21,7 @@ export default function FlowFieldSketch(p: p5) {
     buildPhase = true;
     initialPoints.length = 0;
     paths.length = 0;
-    colorMode = localStorage.getItem("theme") === "color" ? true : false;
+    colorMode = localStorage.getItem("colorMode") === "true" ? true : false;
     console.log("colorMode is " + colorMode)
 
     const density = 30;
@@ -50,32 +50,7 @@ export default function FlowFieldSketch(p: p5) {
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight);
     window.addEventListener('localStorageChanged', handleResize);
-    localStorage.getItem("theme") === "color" ? colorMode = true : colorMode = false;
-    if (colorMode) {
-      r1 = p.random(255);
-      r2 = p.random(255);
-      g1 = p.random(255);
-      g2 = p.random(255);
-      b1 = p.random(255);
-      b2 = p.random(255);
-    }
-    localStorage.getItem("darkMode") === "true" ? p.background(30) : p.background(255);
-    p.angleMode(p.DEGREES);
-    p.noiseDetail(1, 0.5);
-    const density = 30;
-    const space = p.width / density;
-
-    for (let x = 0; x < p.width; x += space) {
-      for (let y = 0; y < p.height; y += space) {
-        const point = p.createVector(x + p.random(-10, 10), y + p.random(-10, 10));
-        points.push(point);
-        initialPoints.push(point.copy());
-        paths.push([]);
-      }
-    }
-
-    p.shuffle(points, true);
-    mult = p.random(0.002, 0.01);
+    initSketch();
   };
 
   
@@ -88,7 +63,7 @@ export default function FlowFieldSketch(p: p5) {
     debounce(() => {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
       initSketch();
-    }, 100); 
+    }, 150); 
   };
   
   function handleResize() {
@@ -96,7 +71,7 @@ export default function FlowFieldSketch(p: p5) {
     debounceTimer = window.setTimeout(() => {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
       initSketch();
-    }, 100);
+    }, 150);
   }
 
   p.draw = () => {
@@ -127,11 +102,10 @@ export default function FlowFieldSketch(p: p5) {
         moveVec = p.createVector(p.cos(angle), p.sin(angle));
         point.add(moveVec);
         paths[i].push(moveVec.copy());
-      } else {
-        if (paths[i].length > 0) {
+      } else if (paths[i].length > 0) {
           moveVec = paths[i].pop()!;
           point.sub(moveVec);
-        }
+        
       }
 
       if (p.dist(p.width / 2, p.height / 2, point.x, point.y) < 350) {
@@ -159,6 +133,5 @@ export default function FlowFieldSketch(p: p5) {
   p.remove = () => {
     window.removeEventListener('localStorageChanged', handleResize);
   }
-
 }
 

@@ -17,13 +17,15 @@ import {
 function App() {
   const location = useLocation();
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+  const [colorMode, setColorMode] = useState(localStorage.getItem('colorMode') === 'true' ? true : false);
 
   useEffect(() => {
-    console.log("starting theme is", localStorage.getItem('theme') || 'dark');
     const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedColorMode = localStorage.getItem('colorMode') === 'true' ? true : false;
     setTheme(savedTheme);
     toggleTheme(savedTheme);
     applyTheme(savedTheme);
+    setColorMode(savedColorMode);
 
     const handleThemeChange = (event: CustomEvent) => {
       if (event.detail.key === 'theme') {
@@ -41,12 +43,18 @@ function App() {
   }, []);
 
   const toggleTheme = (newTheme: string) => {
-    localStorage.setItem('darkMode', newTheme === 'dark' ? 'true' : newTheme === 'color' ? 'true' : 'false');
+    localStorage.setItem('darkMode', newTheme === 'dark' ? 'true' : 'false');
     setItemWithEvent('theme', newTheme);
   };
 
+  const toggleColorMode = () => {
+    localStorage.setItem('colorMode', colorMode ? 'false' : 'true');
+    setItemWithEvent('colorMode', colorMode ? 'false' : 'true');
+    setColorMode(!colorMode);
+  }
+
   const applyTheme = (newTheme: string) => {
-    if (newTheme === 'dark' || newTheme === 'color') {
+    if (newTheme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
@@ -62,8 +70,7 @@ function App() {
       <div id="options" className="hidden xl:flex h-full flex-col rotate-[-180deg] gap-5 mb-5 font-neuzeitRegular w-[25px]">
         <div onClick={() => toggleTheme("light")} className="flex flip-vertical hover:cursor-pointer gap-1 items-center"> Light <div className={`circle ${theme === "light" ? "selected-circle" : ""}`}/> </div>
         <div onClick={() => toggleTheme("dark")} className="flip-vertical hover:cursor-pointer flex gap-1 items-center"> Dark <div className={`circle ${theme === "dark" ? "selected-circle" : ""}`}/>  </div>
-        <div onClick={() => toggleTheme("color")} className="flip-vertical hover:cursor-pointer flex gap-1 items-center"> Color <div className={`circle ${theme === "color" ? "selected-circle" : ""}`}/>  </div>
-
+        <div onClick={() => toggleColorMode()} className="flip-vertical hover:cursor-pointer flex gap-1 items-center"> Color <div className={`circle ${colorMode ? "color-selected" : "color-unselected"}`}/>  </div>
       </div>
         <div className="content-area p-5 md:p-8 lg:p-10 relative z-10 md:pb-2 h-full w-full flex flex-col before:hidden md:before:block font-neuzeitRegular flex-shrink-0">
           <h1 id="name" className="text-3xl mb-0 md:text-5xl xl:text-7xl md:mb-5 font-neuzeitBold">Brandon Le</h1>
@@ -92,7 +99,7 @@ function App() {
         <div className="flex flex-row gap-3 ml-auto font-neuzeitRegular">
         <div onClick={() => toggleTheme("light")} className="flex hover:cursor-pointer gap-1 items-center font-neuzeitRegular"> Light <div className={`circle ${theme === "light" ? "selected-circle" : ""}`}/> </div>
         <div onClick={() => toggleTheme("dark")} className="hover:cursor-pointer flex gap-1 items-center font-neuzeitRegular"> Dark <div className={`circle ${theme === "dark" ? "selected-circle" : ""}`}/>  </div>
-        <div onClick={() => toggleTheme("color")} className="hover:cursor-pointer flex gap-1 items-center font-neuzeitRegular"> Color <div className={`circle ${theme === "color" ? "selected-circle" : ""}`}/>  </div>
+        <div onClick={() => toggleColorMode()} className="hover:cursor-pointer flex gap-1 items-center font-neuzeitRegular"> Color <div className={`circle ${colorMode === true ? "color-selected" : "color-unselected"}`}/>  </div>
         </div>
       </span>
 
