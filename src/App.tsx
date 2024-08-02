@@ -5,7 +5,7 @@ import {Projects} from "./views/Projects";
 import {Experience} from "./views/Experience";
 import {useState, useEffect} from "react";
 import FlowField from "./components/FlowField";
-import { setItemWithEvent } from './hooks/localStorageEvents'; // Assuming this is where the enhanced setItem function is exported
+import { setItemWithEvent } from './hooks/localStorageEvents';
 
 
 import {
@@ -75,7 +75,6 @@ function App() {
         <div className="content-area p-5 md:p-8 lg:p-10 relative z-10 md:pb-2 h-full w-full flex flex-col before:hidden md:before:block font-neuzeitRegular flex-shrink-0">
           <h1 id="name" className="text-3xl mb-0 md:text-5xl xl:text-7xl md:mb-3 font-neuzeitBold"> <a href="/"> Brandon Le</a> </h1>
           <h2 id="title" className="text-xs mb-0 md:text-2xl xl:text-4xl md:mb-3">S O F T W A R E &nbsp; E N G I N E E R</h2>
-          {/*<p className="hidden md:text-lg md:block md:mb-1"> Listened to Enchanted, by Taylor Swift, 8 hours ago. </p>*/}
           <nav className="flex flex-col gap-2 md:gap-0 max-w-[100px] mt-4 md:mt-0">
             <Link className={`redirect-item text-sm md:text-lg ${location.pathname === '/' ? 'selected' : ''}`} to="/">Home</Link>
             <Link className={`redirect-item text-sm md:text-lg ${location.pathname === '/about' ? 'selected' : ''}`} to="/about">About</Link>
