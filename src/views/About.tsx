@@ -17,12 +17,12 @@ export const About = () => {
     return (
         <div className={`hidden text-sm md:text-lg text-right w-[550px] mt-auto lg:mt-0 ml-auto ${fadeIn ? 'fade-in' : ''}`}>         
             <h1 className="font-barcode text-4xl md:text-5xl lg:text-6xl mt-auto md:mb-4">About</h1>
-            <p className=" mb-3">I am a Computer Science student at <span className="text-black  dark:text-white font-bold hover:cursor-pointer italic" onClick={() => window.open("https://www.ucla.edu/")}> UCLA </span> and primarily program in TypeScript or JavaScript frameworks.</p>
+            <p className=" mb-3">I am a Computer Science student at <span className="text-black  dark:text-white font-bold hover:cursor-pointer italic" onClick={() => window.open("https://www.ucla.edu/")}> UCLA</span>, interested in cybersecurity with a focus on securing applications, threat detection, and networks!</p>
             <span className="mb-3">
-              <p>I have <span className="text-black dark:text-white font-bold"> 2 years of software development experience </span> from start-ups to academic instituions to founding a non-profit </p>
+              <p>I have <span className="text-black dark:text-white font-bold"> 3 years of software development experience </span> from start-ups to academic instituions to founding a non-profit </p>
               <p> <span className="text-black font-bold dark:text-white "> Fun Fact: </span> I graduated from <span className="italic hover:cursor-pointer" onClick={() => window.open("https://www.mpusd.net/apps/pages/index.jsp?uREC_ID=1424772&type=d&pREC_ID=2310303")}> Monterey Peninsula College </span> at age 17 </p>
             </span>
-            <p className="mb-3"> I am always looking to better myself in this field--aspired to turn product ideas into technological realities!</p>
+            <p className="mb-3"> I am always looking to better myself in this field--aspired to raise digital literacy while making technology safer yet reliable!</p>
            
             <span className="text-black dark:text-white font-bold">My Favorite Technologies: </span>
             <div className="flex ml-auto gap-2">
