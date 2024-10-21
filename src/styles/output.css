@@ -588,10 +588,6 @@ video {
   }
 }
 
-.static {
-  position: static;
-}
-
 .absolute {
   position: absolute;
 }
@@ -696,6 +692,10 @@ video {
   max-width: 500px;
 }
 
+.max-w-\[550px\] {
+  max-width: 550px;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -703,6 +703,18 @@ video {
 .rotate-\[-180deg\] {
   --tw-rotate: -180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-outside {
+  list-style-position: outside;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .flex-row {
@@ -780,6 +792,10 @@ video {
   padding-right: 0px;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-right {
   text-align: right;
 }
@@ -846,6 +862,16 @@ video {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
 .opacity-100 {
@@ -1374,10 +1400,6 @@ body {
     margin-bottom: 0px;
   }
 
-  .md\:mb-1 {
-    margin-bottom: 0.25rem;
-  }
-
   .md\:mb-3 {
     margin-bottom: 0.75rem;
   }
@@ -1392,10 +1414,6 @@ body {
 
   .md\:mt-0 {
     margin-top: 0px;
-  }
-
-  .md\:block {
-    display: block;
   }
 
   .md\:gap-0 {
@@ -1419,9 +1437,9 @@ body {
     line-height: 2rem;
   }
 
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .md\:text-5xl {
@@ -1452,6 +1470,14 @@ body {
 
   .lg\:min-w-\[450px\] {
     min-width: 450px;
+  }
+
+  .lg\:min-w-\[500px\] {
+    min-width: 500px;
+  }
+
+  .lg\:list-outside {
+    list-style-position: outside;
   }
 
   .lg\:p-10 {
@@ -1511,5 +1537,9 @@ body {
   .\32xl\:py-10 {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+  }
+
+  .\32xl\:pl-8 {
+    padding-left: 2rem;
   }
 }
