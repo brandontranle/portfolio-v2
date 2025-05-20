@@ -12,6 +12,16 @@ export default function FlowFieldSketch(p: p5) {
   let colorMode: boolean;
   let r1: number, g1: number, b1: number, r2: number, g2: number, b2: number;
 
+
+function generateNewColors() {
+  r1 = p.random(255);
+  r2 = p.random(255);
+  g1 = p.random(255);
+  g2 = p.random(255);
+  b1 = p.random(255);
+  b2 = p.random(255);
+}
+  
   function initSketch() {
     localStorage.getItem("darkMode") === "true" ? (p.background(30)) : (p.background(255));
     p.resizeCanvas(p.windowWidth, p.windowHeight);
@@ -124,6 +134,11 @@ export default function FlowFieldSketch(p: p5) {
           paths[i] = [];
         });
         mult = p.random(0.002, 0.01);
+
+        if (colorMode) {
+        generateNewColors();
+        }
+
         localStorage.getItem("darkMode") === "true" ? p.background(30) : p.background(255);
       }
     }

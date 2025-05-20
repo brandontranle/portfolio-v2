@@ -158,7 +158,7 @@ export const projects: Project[] = [
             title: "Intern Guys",
             role: "Software Security Engineer Intern - Jan. 2024 to Apr. 2024",
             description: [
-                "Fixed a security vulnerability in an HTML form exploited by spam, SQL injection, and XSS attacks. Implemented CAPTCHA, rate limiting, and input sanitation, stopping potential attacks for 20,000+ users",
+                "Fixed a security vulnerability in an HTML form exploited by spam, SQL injection, and XSS. Implemented CAPTCHA, rate limiting, and input sanitation, stopping attacks for 20,000+ users",
                 "Deployed a Two-Factor Authentication (2FA) system using email verification methods, strengthening security posture and reducing unauthorized access attempts per month by 90%",
                 "Engineered a full-stack blog platform in C# and React.js, raising monthly user engagement by 2500+ users",
             ],
