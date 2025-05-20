@@ -106,6 +106,8 @@ export const projects: Project[] = [
 
 
     export const experiences: Experience[] = [
+
+         
         {
         title: "U.S. Naval Research Laboratory",
         role: "Security Research Intern - Oct.2024 to Present",
@@ -125,6 +127,7 @@ export const projects: Project[] = [
         description: [
             "Conducting security-related research under Professor Yuan Tian, analyzing over 100K+ data points from online platforms to identify gaps in digital literacy",
             "Developed a web scraper in Python to collect and analyze data from SideQuest VR, and Reddit, reducing runtime by 95% through multi-threading and API handling",
+            " Extracted 1M+ posts from community platforms, supplying structured input for sentiment and compliance gap analysis in cybersecurity research"
         ],
         skills: [
             { "icon": "python" },
@@ -138,9 +141,9 @@ export const projects: Project[] = [
             title: "Vitametrics",
             role: "Founder, Software Security Engineer - Jan. 2024 to Oct. 2024",
             description: [
-                "Wrote 40K+ lines of code, developing HIPAA compliance in secure, reusable React.js components and back-end solutions. Improved loading times by 80% while ensuring secure data exchange in APIs",
-                "Managed a beta test with 100+ Fitbit devices at Iowa State University, collecting security-related feedback and performance data to identify vulnerabilities and optimize application performance",
-                "Implemented security practices, including encryption, secure session management, and input validation, to protect sensitive data and ensure ISO 27001 compliance during collaboration with academic partners"
+                "Wrote 40K+ lines of code, developing HIPAA compliance in secure, reusable React.js components and back-end solutions. ",
+                "Managed a beta test with 100+ Fitbit devices at Iowa State University, collecting security-related feedback and performance data to identify vulnerabilities and optimize performance",
+                "Implemented security practices, including encryption, JWT, and input validation, to protect sensitive data and ensure ISO 27001 compliance during collaboration with academic partners"
             ],
             skills: [
                 { "icon": "react" },
@@ -170,7 +173,7 @@ export const projects: Project[] = [
             title: "Monterey Peninsula College",
             role: "Web App Security Developer - June 2023 to Dec. 2023",
             description: [
-                "Managed production web server for a community college application, implementing role-based access control, SSL encryption, and firewall configurations, ensuring secure access and 99.9% uptime",
+                "Managed production web server, implementing role-based access control, SSL encryption, and firewall configurations, ensuring secure access and 99.9% uptime",
                 "Created a peer-grading website using PHP, Bootstrap, and SQLite to handle 600 project submissions, enforcing input sanitation to prevent parameter tampering and reduce front-end security vulnerabilities",
                 "Built a Python API to sort and allocate 3 project links to each user for peer grading, automating and reducing manual processing time by 99.87%",
 ],

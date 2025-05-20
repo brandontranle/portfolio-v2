@@ -31,6 +31,7 @@ box-shadow: inset 0rem 0rem 5rem 0rem white; /* <-- 10px spread radius */
 .content-area{
     box-sizing: border-box;
     border: 3px solid black;
+    
 }
 
 .dark .content-area{
@@ -616,7 +617,7 @@ cursor: pointer;
 
 .experience-card{
   display: grid;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   grid-template-rows: auto auto 1fr auto auto; /* Defines the five rows */
   align-items: start; /* Align items at the start of each grid row */
   text-align: right;

@@ -83,8 +83,8 @@ export default function FlowFieldSketch(p: p5) {
     }
 
     points.forEach((point, i) => {
-      const alpha = p.map(p.dist(p.width / 2, p.height / 2, point.x, point.y), 0, 350, 255, 0);
-     
+    const alpha = 255; // Or use a different mapping if you prefer
+
       if (colorMode) {
         const r = p.map(point.x, 0, p.width, r1, r2);
         const g = p.map(point.y, 0, p.height, g1, g2);
@@ -108,9 +108,8 @@ export default function FlowFieldSketch(p: p5) {
         
       }
 
-      if (p.dist(p.width / 2, p.height / 2, point.x, point.y) < 350) {
-        p.ellipse(point.x, point.y, 1);
-      }
+      // Remove the distance check and draw all points
+      p.ellipse(point.x, point.y, 1);
 
       point.x > p.width ? point.x = 0 : point.x < 0 ? point.x = p.width : null;
       point.y > p.height ? point.y = 0 : point.y < 0 ? point.y = p.height : null;
