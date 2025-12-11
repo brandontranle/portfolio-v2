@@ -106,8 +106,19 @@ export const projects: Project[] = [
 
 
     export const experiences: Experience[] = [
-
-         
+        {
+        title: "Grant Thornton",
+        role: "IT Risk Advisory Intern - Jun.2025 to Aug.2025",
+        description: [
+            "Captured critical insights in 30 IT General Controls (ITGCs) walkthroughs using SOX and NIST frameworks.",
+            "Tested 25 ITGC and SDLC controls across 29 key systems to support SOX compliance and internal audit efforts.",
+            "Created a Python script to flag changes across current and prior-year narratives, reducing review time by 1 hour.",
+        ],
+        skills: [
+            { "icon": "powershell" },
+            { "icon": "python" },
+        ],
+        },
         {
         title: "U.S. Naval Research Laboratory",
         role: "Security Research Intern - Oct.2024 to Present",
